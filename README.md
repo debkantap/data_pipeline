@@ -87,13 +87,20 @@ All of these tools will be built and run using docker, and more specifically doc
 11. create the spark job image
 
 sudo docker build -f spark/Dockerfile -t rappel-conso/spark:latest --build-arg POSTGRES_PASSWORD=welcome  .
+
 12. sudo docker-compose up -d
-13. echo -e "AIRFLOW_UID=$(id -u)\nAIRFLOW_PROJ_DIR=\"./airflow_resources\"" > .env
-14. sudo docker compose -f docker-compose-airflow.yaml up -d
-15. The airflow UI will be avilable in: http://<IP of the VM>:8080/
-16. Login to portal as airflow/airflow
-17. Scroll down to find "kafka_spark_dag" workflow
-18. Run worflow to see the result. Data must be populated in "rappel_conso_table" table
+    
+14. echo -e "AIRFLOW_UID=$(id -u)\nAIRFLOW_PROJ_DIR=\"./airflow_resources\"" > .env
+
+16. sudo docker compose -f docker-compose-airflow.yaml up -d
+    
+18. The airflow UI will be avilable in: http://<IP of the VM>:8080/
+    
+20. Login to portal as airflow/airflow
+    
+22. Scroll down to find "kafka_spark_dag" workflow
+
+24. Run worflow to see the result. Data must be populated in "rappel_conso_table" table
 
     
    
